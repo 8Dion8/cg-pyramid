@@ -13,12 +13,17 @@
         "MAWP": {
             "primary color":"#FF0000",
             "secondary color":"#000000",
-            "font":""
+            "font":"Comfortaa"
         },
         "Limn": {
             "primary color":"#2E3436",
             "secondary color":"#D3D7CF",
             "font":"Space Mono"
+        },
+        "Vyxal": {
+            "primary color":"#000000",
+            "secondary color":"#AA54AA",
+            "font":"Nunito"
         }
     }
 }
