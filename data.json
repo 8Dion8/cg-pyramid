@@ -1,0 +1,24 @@
+{
+    "languages": {
+        "Python 3": {
+            "primary color":"#306998",
+            "secondary color":"#FFD43B",
+            "font":""
+        },
+        "Python 2": {
+            "primary color":"#306998",
+            "secondary color":"#FFD43B",
+            "font":""
+        },
+        "MAWP": {
+            "primary color":"#FF0000",
+            "secondary color":"#000000",
+            "font":""
+        },
+        "Limn": {
+            "primary color":"#2E3436",
+            "secondary color":"#D3D7CF",
+            "font":"Space Mono"
+        }
+    }
+}
