@@ -24,6 +24,26 @@
             "primary color":"#000000",
             "secondary color":"#AA54AA",
             "font":"Nunito"
+        },
+        "Lua": {
+            "primary color":"#0B2080",
+            "secondary color":"#E6E6E6",
+            "font":"Space Mono"
+        },
+        "Scheme": {
+            "primary color":"#000000",
+            "secondary color":"#ADA302",
+            "font":"Comic Sans MS"
+        },
+        "Malbolge": {
+            "primary color":"#FF00D0",
+            "secondary color":"#910061",
+            "font":"Arial"
+        }
+        "PHP": {
+            "primary color":"#9C9C9C",
+            "secondary color":"#575757",
+            "font":"Gill Sans"
         }
     }
 }
