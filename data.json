@@ -24,6 +24,11 @@
             "primary color":"#000000",
             "secondary color":"#AA54AA",
             "font":"Nunito"
+        },
+        "APL": {
+            "primary color":"EB6123",
+            "secondary color":"#FFFFFF",
+            "font":"APL386 Unicode" // https://github.com/abrudz/APL386/blob/master/APL386.ttf 
         }
     }
 }
