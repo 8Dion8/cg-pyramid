@@ -69,7 +69,7 @@ def add_lang(draw,n,max_n,name,lang_data):
         font = ImageFont.truetype("fonts/ArialUnicodeMS.ttf",size=size)
 
     draw.polygon([(692+x,200+y),(346+x,y),(x,200+y),(x,600+y),(346+x,800+y),(692+x,600+y)],fill=data["primary color"])
-    while ((font.getsize(name)[0] < 650) and (font.getsize(name)[1] < 380)):
+    while ((font.getsize(name)[0] < 650) and (font.getsize(name)[1] < 370)):
         size += 1
         font = ImageFont.truetype(f"fonts/{font_name}.ttf",size=size)
 
@@ -86,7 +86,7 @@ def add_lang(draw,n,max_n,name,lang_data):
 
 if __name__ == "__main__":
     
-    ima = Image.new('RGB',(15000,15000))
+    ima = Image.new('RGB',(4000,4000),"#36393E")
     draw = ImageDraw.Draw(ima)
 
     #data = get_data(58615)
@@ -96,7 +96,14 @@ if __name__ == "__main__":
         "J":"7",
         "Python 3":"67",
         "MAWP":"85",
-        "Limn":"178"
+        "Limn":"178",
+        "Lua":"35",
+        "Scheme":"183",
+        "Malbolge":"72",
+        "PHP":"91",
+        "APL":"6",
+        "Python 2":"65",
+        
     }
 
     sorted_data = {k: v for k, v in sorted(data.items(), key=lambda item: int(item[1]))}
