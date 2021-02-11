@@ -50,21 +50,31 @@ def add_lang(draw,n,max_n,name,lang_data):
     try:
         data = lang_data["languages"][name]
     except:
-        return
+        data = {
+            "primary color":"#000000",
+            "secondary color":"#ffffff",
+            "font":"ArialUnicodeMS"
+        }
     column, row = get_offset(n)
 
     x = 346*2 * column + 346 * (max_n - row)
     y = 600 * row
     size = 1
-    font = ImageFont.truetype("fonts/ArialUnicodeMS.ttf",size=size)
+    
+    try:
+        font_name = data["font"]
+        font = ImageFont.truetype(f"fonts/{font_name}.ttf",size=size)
+    except:
+        font_name = "ArialUnicodeMS"
+        font = ImageFont.truetype("fonts/ArialUnicodeMS.ttf",size=size)
 
     draw.polygon([(692+x,200+y),(346+x,y),(x,200+y),(x,600+y),(346+x,800+y),(692+x,600+y)],fill=data["primary color"])
     while ((font.getsize(name)[0] < 650) and (font.getsize(name)[1] < 380)):
         size += 1
-        font = ImageFont.truetype("fonts/ArialUnicodeMS.ttf",size=size)
+        font = ImageFont.truetype(f"fonts/{font_name}.ttf",size=size)
 
     size = floor(size*0.9)
-    font = ImageFont.truetype("fonts/ArialUnicodeMS.ttf",size=size)
+    font = ImageFont.truetype(f"fonts/{font_name}.ttf",size=size)
 
     
     w, h = font.getsize(name)

@@ -3,57 +3,57 @@
         "Python 3": {
             "primary color":"#306998",
             "secondary color":"#FFD43B",
-            "font":""
+            "font":"Flux-Regular"
         },
         "Python 2": {
             "primary color":"#306998",
             "secondary color":"#FFD43B",
-            "font":""
+            "font":"Flux-Regular"
         },
         "MAWP": {
             "primary color":"#FF0000",
             "secondary color":"#000000",
-            "font":"Comfortaa"
+            "font":"Comfortaa-Light"
         },
         "Limn": {
             "primary color":"#2E3436",
             "secondary color":"#D3D7CF",
-            "font":"Space Mono"
+            "font":"SpaceMono-Regular"
         },
         "Vyxal": {
             "primary color":"#000000",
             "secondary color":"#AA54AA",
-            "font":"Nunito"
+            "font":"Nunito-Regular"
         },
         "Lua": {
             "primary color":"#0B2080",
             "secondary color":"#E6E6E6",
-            "font":"Space Mono"
+            "font":"SpaceMono-Regular"
         },
         "Scheme": {
             "primary color":"#000000",
             "secondary color":"#ADA302",
-            "font":"Comic Sans MS"
+            "font":"ComicSansMS3"
         },
         "Malbolge": {
             "primary color":"#FF00D0",
             "secondary color":"#910061",
-            "font":"Arial"
+            "font":"ArialUnicodeMS"
         },
         "PHP": {
             "primary color":"#9C9C9C",
             "secondary color":"#575757",
-            "font":"Gill Sans"
+            "font":"Gill-Sans"
         },
         "APL": {
             "primary color":"#EB6123",
             "secondary color":"#FFFFFF",
-            "font":"APL386 Unicode"
+            "font":"APL386"
         },
         "05AB1E": {
             "primary color":"#FFFFFF",
             "secondary color":"#000000",
-            "font":"APL386 Unicode"
+            "font":""
         },
         "J": {
             "primary color":"#0fecfd",
