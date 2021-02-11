@@ -48,12 +48,17 @@
         "APL": {
             "primary color":"#EB6123",
             "secondary color":"#FFFFFF",
-            "font":"APL386 Unicode" // https://github.com/abrudz/APL386/blob/master/APL386.ttf 
+            "font":"APL386 Unicode"
         },
         "05AB1E": {
             "primary color":"#FFFFFF",
             "secondary color":"#000000",
             "font":"APL386 Unicode"
+        },
+        "J": {
+            "primary color":"#0fecfd",
+            "secondary color":"#1c6aa2",
+            "font":""
         }
     }
 }
