@@ -59,6 +59,11 @@
             "primary color":"#0fecfd",
             "secondary color":"#1c6aa2",
             "font":""
+        },
+        "Javascript (ES6)": {
+            "primary color":"#f0db4f",
+            "secondary color":"#323330",
+            "font":"NeutraText-Bold"
         }
     }
 }
