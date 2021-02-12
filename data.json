@@ -38,11 +38,11 @@
         "Scheme": {
             "primary color":"#000000",
             "secondary color":"#ADA302",
-            "font":"ComicSansMS3"
+            "font":"PAPYRUS"
         },
         "Malbolge": {
-            "primary color":"#FF00D0",
-            "secondary color":"#910061",
+            "primary color":"#860111",
+            "secondary color":"#FF4605",
             "font":"ArialUnicodeMS"
         },
         "PHP": {
@@ -103,7 +103,7 @@
         "asm2bf": {
             "primary color":"#2b7489",
             "secondary color":"#FFFFFF",
-            "font":""
+            "font":"cour"
         }
     }
 }
