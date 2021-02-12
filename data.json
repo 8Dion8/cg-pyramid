@@ -99,6 +99,11 @@
             "primary color":"#000000",
             "secondary color":"#FFFFFF",
             "font":""
+        },
+        "asm2bf": {
+            "primary color":"#2b7489",
+            "secondary color":"#FFFFFF",
+            "font":""
         }
     }
 }

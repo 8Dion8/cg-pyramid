@@ -86,7 +86,7 @@ def add_lang(draw,n,max_n,name,lang_data):
     
     w, h = font.getsize(name)
     coords = (x+(346-w//2),y+400-h//2-floor(h*0.15))
-    #draw.rectangle([coords,(coords[0]+w,coords[1]+h)],fill="#00000000",outline="yellow",width=2)
+    draw.rectangle([coords,(coords[0]+w,coords[1]+h)],fill="#00000000",outline="yellow",width=2)
     draw.text(coords,name,fill=data["secondary color"],font=font)
     
 
@@ -96,8 +96,8 @@ if __name__ == "__main__":
     ima = Image.new('RGB',(4000,4000),"#36393E")
     draw = ImageDraw.Draw(ima)
 
-    data = get_data(218805)
-    '''
+    #data = get_data(218805)
+    #'''
     data = {
         "05AB1E":"6",
         "Vyxal":"5",
@@ -117,7 +117,7 @@ if __name__ == "__main__":
         "x86-16 machine code":"130",
         "PowerShell":"129"
     }
-    '''
+    #'''
     sorted_data = {k: v for k, v in sorted(data.items(), key=lambda item: int(item[1]))}
 
     q, max_n = get_offset(len(data.keys()))
