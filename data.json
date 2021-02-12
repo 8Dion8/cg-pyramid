@@ -64,6 +64,16 @@
             "primary color":"#f0db4f",
             "secondary color":"#323330",
             "font":"NeutraText-Bold"
+        },
+        "R": {
+            "primary color":"#165CAA",
+            "secondary color":"#BFC2C5",
+            "font":"arial-mt-std-black"
+        },
+        "Haskell": {
+            "primary color":"#5e5086",
+            "secondary color":"#343434",
+            "font":"Grotesk Medium"
         }
     }
 }
