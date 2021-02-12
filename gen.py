@@ -20,7 +20,14 @@ def get_data(question_id):
             title = soup.body.h1.text
         except:pass
         parts = title.split(",")
-        bytecount = str(min([int(i) for i in parts[1:] if i.isnumeric()]))
+        parts_ = []
+        count = 0
+        for i in parts:
+            if count:
+                parts_.extend(i.split())
+            else:
+                count = 1
+        bytecount = str(min([int(i) for i in parts_ if i.isnumeric()]))
         data[parts[0]] = bytecount
 
     return data
@@ -89,7 +96,8 @@ if __name__ == "__main__":
     ima = Image.new('RGB',(4000,4000),"#36393E")
     draw = ImageDraw.Draw(ima)
 
-    #data = get_data(58615)
+    data = get_data(218805)
+    '''
     data = {
         "05AB1E":"6",
         "Vyxal":"5",
@@ -106,10 +114,10 @@ if __name__ == "__main__":
         "Javascript (ES6)":"64",
         "R":"85",
         "Haskell":"90",
-        "x86-16 machine code":"130"
-
+        "x86-16 machine code":"130",
+        "PowerShell":"129"
     }
-
+    '''
     sorted_data = {k: v for k, v in sorted(data.items(), key=lambda item: int(item[1]))}
 
     q, max_n = get_offset(len(data.keys()))

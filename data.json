@@ -30,6 +30,11 @@
             "secondary color":"#E6E6E6",
             "font":"SpaceMono-Regular"
         },
+        "Lua (LuaJIT)": {
+            "primary color":"#0B2080",
+            "secondary color":"#E6E6E6",
+            "font":"SpaceMono-Regular"
+        },
         "Scheme": {
             "primary color":"#000000",
             "secondary color":"#ADA302",
@@ -79,6 +84,21 @@
             "primary color":"#000000",
             "secondary color":"#00FF00",
             "font":"Perfect DOS VGA 437"
+        },
+        "PowerShell": {
+            "primary color":"#263f88",
+            "secondary color":"#FFFFFF",
+            "font":"Lucidia Console Regular"
+        },
+        "Charcoal": {
+            "primary color":"#000000",
+            "secondary color":"#FFFFFF",
+            "font":""
+        },
+        "Perl 5": {
+            "primary color":"#000000",
+            "secondary color":"#FFFFFF",
+            "font":""
         }
     }
 }
