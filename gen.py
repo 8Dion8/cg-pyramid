@@ -103,7 +103,11 @@ if __name__ == "__main__":
         "PHP":"91",
         "APL":"6",
         "Python 2":"65",
-        
+        "Javascript (ES6)":"64",
+        "R":"85",
+        "Haskell":"90",
+        "x86-16 machine code":"130"
+
     }
 
     sorted_data = {k: v for k, v in sorted(data.items(), key=lambda item: int(item[1]))}

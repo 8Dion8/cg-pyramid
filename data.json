@@ -74,6 +74,11 @@
             "primary color":"#5e5086",
             "secondary color":"#343434",
             "font":"Grotesk Medium"
+        },
+        "x86-16 machine code": {
+            "primary color":"#000000",
+            "secondary color":"#00FF00",
+            "font":"Perfect DOS VGA 437"
         }
     }
 }
