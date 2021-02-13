@@ -65,7 +65,17 @@
             "secondary color":"#1c6aa2",
             "font":""
         },
-        "Javascript (ES6)": {
+        "JavaScript (ES6)": {
+            "primary color":"#f0db4f",
+            "secondary color":"#323330",
+            "font":"NeutraText-Bold"
+        },
+        "JavaScript": {
+            "primary color":"#f0db4f",
+            "secondary color":"#323330",
+            "font":"NeutraText-Bold"
+        },
+        "JavaScript (Node.js)": {
             "primary color":"#f0db4f",
             "secondary color":"#323330",
             "font":"NeutraText-Bold"

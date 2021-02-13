@@ -19,16 +19,19 @@ def get_data(question_id):
         try:
             title = soup.body.h1.text
         except:pass
-        parts = title.split(",")
-        parts_ = []
-        count = 0
-        for i in parts:
-            if count:
-                parts_.extend(i.split())
-            else:
-                count = 1
-        bytecount = str(min([int(i) for i in parts_ if i.isnumeric()]))
-        data[parts[0]] = bytecount
+        try:
+            parts = title.split(",")
+            parts_ = []
+            count = 0
+            for i in parts:
+                if count:
+                    parts_.extend(i.split())
+                else:
+                    count = 1
+            bytecount = str(min([int(i) for i in parts_ if i.isnumeric()]))
+            data[parts[0]] = bytecount
+        except:pass
+        
 
     return data
 
@@ -50,7 +53,7 @@ def get_offset(n):
             current_max += 1
             current_n = 0
         
-    return x-1, y-1
+    return x-1, y-1, current_max
 
 
 def add_lang(draw,n,max_n,name,lang_data):
@@ -58,11 +61,11 @@ def add_lang(draw,n,max_n,name,lang_data):
         data = lang_data["languages"][name]
     except:
         data = {
-            "primary color":"#000000",
-            "secondary color":"#ffffff",
+            "primary color":"#ffffff",
+            "secondary color":"#000000",
             "font":"ArialUnicodeMS"
         }
-    column, row = get_offset(n)
+    column, row, _ = get_offset(n)
 
     x = 346*2 * column + 346 * (max_n - row)
     y = 600 * row
@@ -85,20 +88,27 @@ def add_lang(draw,n,max_n,name,lang_data):
 
     
     w, h = font.getsize(name)
+    offset_x, offset_y = font.getoffset(name)
+    if name.upper() != name:
+        _, h = font.getsize('a')
+        _, offset_y = font.getoffset('a')
+    
+    w += offset_x
+    h += offset_y
+
     coords = (x+(346-w//2),y+400-h//2)#-floor(h*0.15))
-    draw.rectangle([coords,(coords[0]+w,coords[1]+h)],fill="#00000000",outline="yellow",width=2)
+    #draw.rectangle([coords,(coords[0]+w,coords[1]+h)],fill="#00000000",outline="yellow",width=2)
     draw.text(coords,name,fill=data["secondary color"],font=font)
-    draw.line([(coords[0],coords[1]+h//2),(coords[0]+w,coords[1]+h//2)],fill=(255,0,255),width=2)
+    #draw.line([(coords[0],coords[1]+h//2),(coords[0]+w,coords[1]+h//2)],fill=(255,0,255),width=2)
     
 
 
 if __name__ == "__main__":
     
-    ima = Image.new('RGB',(4000,4000),"#36393E")
-    draw = ImageDraw.Draw(ima)
+    
 
-    #data = get_data(218805)
-    #'''
+    data = get_data(58615)
+    '''
     data = {
         "05AB1E":"6",
         "Vyxal":"5",
@@ -112,17 +122,23 @@ if __name__ == "__main__":
         "PHP":"91",
         "APL":"6",
         "Python 2":"65",
-        "Javascript (ES6)":"64",
+        "JavaScript (ES6)":"64",
         "R":"85",
         "Haskell":"90",
         "x86-16 machine code":"130",
         "PowerShell":"129",
-        "asm2bf":"136"
+        "asm2bf":"136",
+        "naz":"158"
     }
-    #'''
+    '''
     sorted_data = {k: v for k, v in sorted(data.items(), key=lambda item: int(item[1]))}
 
-    q, max_n = get_offset(len(data.keys()))
+    ima_size_x, ima_size_y, max_ = get_offset(len(data.keys()))
+    ima = Image.new('RGB',((max_-1) * 792,(ima_size_y + 2) * 600),"#36393E")
+    draw = ImageDraw.Draw(ima)
+
+
+    q, max_n, _ = get_offset(len(data.keys()))
     with open("data.json","r") as f:
         lang_data = json.load(f)
     #print(sorted_data)
