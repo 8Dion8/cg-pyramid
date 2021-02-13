@@ -128,7 +128,8 @@ if __name__ == "__main__":
         "x86-16 machine code":"130",
         "PowerShell":"129",
         "asm2bf":"136",
-        "naz":"158"
+        "naz":"158",
+        "Seed":"194
     }
     '''
     sorted_data = {k: v for k, v in sorted(data.items(), key=lambda item: int(item[1]))}

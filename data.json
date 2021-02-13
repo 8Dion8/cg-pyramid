@@ -119,6 +119,11 @@
             "primary color":"#282a36",
             "secondary color":"#f1f1f0",
             "font":"Abel-Regular"
+        },
+        "Seed": {
+            "primary color":"#FFFA8F",
+            "secondary color":"#53350A",
+            "font":""
         }
     }
 }
