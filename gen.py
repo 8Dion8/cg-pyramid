@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from stackapi import StackAPI
 import json
 from math import floor
+import re
 
 
 def get_data(question_id):
@@ -14,25 +15,21 @@ def get_data(question_id):
                         filter='!*SU8CGYZitCB.D*(BDVIficKj7nFMLLDij64nVID)N9aK3GmR9kT4IzT*5iO_1y3iZ)6W.G*')
 
     for answer in answers["items"]:
-
         soup = BeautifulSoup(answer["body"], features="lxml")
+        if soup.html.body.h1:
+            title = soup.html.body.h1.text
+        elif soup.html.body.h2:
+            title = soup.html.body.h2.text
+        elif soup.html.body.p:
+            title = soup.html.body.p.text
+        else:break
+        finds = re.findall(r".+[\,\-\:\s]{0,3}\d+[\d\s]*(?:\s(?i)byte(?:s)?)?",title)[0]
+        score = finds.split()[-1]
+        name = re.split(r"[\,\-\:]",finds)[0].strip()
         try:
-            title = soup.body.h1.text
+            data[name] = str(floor(int(score) // int(score) > -1))
         except:pass
-        try:
-            parts = title.split(",")
-            parts_ = []
-            count = 0
-            for i in parts:
-                if count:
-                    parts_.extend(i.split())
-                else:
-                    count = 1
-            bytecount = str(min([int(i) for i in parts_ if i.isnumeric()]))
-            data[parts[0]] = bytecount
-        except:pass
-        
-
+            
     return data
 
 
@@ -129,7 +126,7 @@ if __name__ == "__main__":
         "PowerShell":"129",
         "asm2bf":"136",
         "naz":"158",
-        "Seed":"194
+        "Seed":"194"
     }
     '''
     sorted_data = {k: v for k, v in sorted(data.items(), key=lambda item: int(item[1]))}
