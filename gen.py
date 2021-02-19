@@ -6,6 +6,9 @@ from math import floor
 import re
 
 
+THREE_FOUR_SIX = 346
+FOUR_HUNDRED = 400
+
 def get_data(question_id):
     data = {}
     SITE = StackAPI('codegolf')
@@ -43,8 +46,7 @@ def get_offset(n):
         current_count += 1
 
         if current_count == n + 1:
-            y = current_max
-            x = current_n
+            y, x = current_max, current_n
             break
         if current_n == current_max:
             current_max += 1
@@ -62,20 +64,17 @@ def add_lang(draw,n,max_n,name,lang_data):
             "secondary color":"#000000",
             "font":"ArialUnicodeMS"
         }
+    
+     
     column, row, _ = get_offset(n)
 
-    x = 346*2 * column + 346 * (max_n - row)
+    x = THREE_FOUR_SIX*2 * column + THREE_FOUR_SIX * (max_n - row)
     y = 600 * row
     size = 1
-    
-    try:
-        font_name = data["font"]
-        font = ImageFont.truetype(f"fonts/{font_name}.ttf",size=size)
-    except:
-        font_name = "ArialUnicodeMS"
-        font = ImageFont.truetype("fonts/ArialUnicodeMS.ttf",size=size)
+       
+    font = ImageFont.truetype("fonts/" + data.get("font", "ArialUnicodeMS") + ".ttf", size=size)
 
-    draw.polygon([(692+x,200+y),(346+x,y),(x,200+y),(x,600+y),(346+x,800+y),(692+x,600+y)],fill=data["primary color"])
+    draw.polygon([(692+x,200+y),(THREE_FOUR_SIX+x,y),(x,200+y),(x,600+y),(THREE_FOUR_SIX+x,800+y),(692+x,600+y)],fill=data["primary color"])
     while ((font.getsize(name)[0] < 650) and (font.getsize(name)[1] < 370)):
         size += 1
         font = ImageFont.truetype(f"fonts/{font_name}.ttf",size=size)
@@ -93,7 +92,7 @@ def add_lang(draw,n,max_n,name,lang_data):
     w += offset_x
     h += offset_y
 
-    coords = (x+(346-w//2),y+400-h//2)#-floor(h*0.15))
+    coords = (x+(THREE_FOUR_SIX-w//2),y+FOUR_HUNDRED-h//2)#-floor(h*0.15))
     #draw.rectangle([coords,(coords[0]+w,coords[1]+h)],fill="#00000000",outline="yellow",width=2)
     draw.text(coords,name,fill=data["secondary color"],font=font)
     #draw.line([(coords[0],coords[1]+h//2),(coords[0]+w,coords[1]+h//2)],fill=(255,0,255),width=2)
