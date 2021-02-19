@@ -71,16 +71,20 @@ def add_lang(draw,n,max_n,name,lang_data):
     x = THREE_FOUR_SIX*2 * column + THREE_FOUR_SIX * (max_n - row)
     y = 600 * row
     size = 1
-       
-    font = ImageFont.truetype("fonts/" + data.get("font", "ArialUnicodeMS") + ".ttf", size=size)
+    try:
+        font_name = data["font"]
+        font = ImageFont.truetype(f"fonts/{font_name}/{font_name}.ttf",size=size)
+    except:
+        font_name = "ArialUnicodeMS"
+        font = ImageFont.truetype("fonts/ArialUnicodeMS/ArialUnicodeMS.ttf",size=size)
 
     draw.polygon([(692+x,200+y),(THREE_FOUR_SIX+x,y),(x,200+y),(x,600+y),(THREE_FOUR_SIX+x,800+y),(692+x,600+y)],fill=data["primary color"])
     while ((font.getsize(name)[0] < 650) and (font.getsize(name)[1] < 370)):
         size += 1
-        font = ImageFont.truetype(f"fonts/{font_name}.ttf",size=size)
+        font = ImageFont.truetype(f"fonts/{font_name}/{font_name}.ttf",size=size)
 
     size = floor(size*0.9)
-    font = ImageFont.truetype(f"fonts/{font_name}.ttf",size=size)
+    font = ImageFont.truetype(f"fonts/{font_name}/{font_name}.ttf",size=size)
 
     
     w, h = font.getsize(name)
@@ -103,8 +107,8 @@ if __name__ == "__main__":
     
     
 
-    data = get_data(58615)
-    '''
+    #data = get_data(58615)
+    #'''
     data = {
         "05AB1E":"6",
         "Vyxal":"5",
@@ -125,9 +129,10 @@ if __name__ == "__main__":
         "PowerShell":"129",
         "asm2bf":"136",
         "naz":"158",
-        "Seed":"194"
+        "Seed":"194",
+        "Pyth":"12"
     }
-    '''
+    #'''
     sorted_data = {k: v for k, v in sorted(data.items(), key=lambda item: int(item[1]))}
 
     ima_size_x, ima_size_y, max_ = get_offset(len(data.keys()))

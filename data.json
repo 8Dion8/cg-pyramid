@@ -10,6 +10,11 @@
             "secondary color":"#FFD43B",
             "font":"Flux-Regular"
         },
+        "Pyth": {
+            "primary color":"#FFD43B",
+            "secondary color":"#306998",
+            "font":"Flux-Regular"
+        },
         "MAWP": {
             "primary color":"#FF0000",
             "secondary color":"#000000",
